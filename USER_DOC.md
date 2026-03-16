@@ -49,7 +49,7 @@ make clean # Remove containers, images, volumes and networks
 - WordPress admin: https://asoumare.42.fr/wp-admin
 - Default admin credentials:
 - Username: superuser
-- Email: admin@42.fr
+- Email: asoumare@42.fr
 - Default user credentials:
 - Username: visitor
 - Email: user@42.fr

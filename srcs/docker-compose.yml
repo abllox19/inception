@@ -21,7 +21,7 @@ services:
       - db_password
       - wp_admin_password
     volumes:
-      - wp:/var/www/html
+      - wp:/home/asoumare/data
     depends_on:
       - mariadb
     networks:
@@ -32,9 +32,9 @@ services:
     build: requirements/nginx
     restart: always
     ports:
-      - "443:443"
+      - "443:447"
     volumes:
-      - wp:/var/www/html
+      - wp:/home/asoumare/data
     depends_on:
       - wordpress
     networks:

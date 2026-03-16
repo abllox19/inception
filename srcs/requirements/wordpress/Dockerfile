@@ -24,12 +24,12 @@ RUN sed -i 's|listen = /run/php/php7.4-fpm.sock|listen = 9000|g' /etc/php/7.4/fp
     sed -i 's|;listen.owner = www-data|listen.owner = www-data|g' /etc/php/7.4/fpm/pool.d/www.conf && \
     sed -i 's|;listen.group = www-data|listen.group = www-data|g' /etc/php/7.4/fpm/pool.d/www.conf
 
-WORKDIR /var/www/html
+WORKDIR /home/asoumare/data
 
 RUN wget --no-check-certificate https://wordpress.org/latest.tar.gz && \
     tar -xzf latest.tar.gz --strip-components=1 && \
     rm latest.tar.gz && \
-    chown -R www-data:www-data /var/www/html
+    chown -R www-data:www-data /home/asoumare/data
 
 RUN wget --no-check-certificate https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
     chmod +x wp-cli.phar && \

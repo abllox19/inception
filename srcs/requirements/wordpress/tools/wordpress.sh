@@ -4,7 +4,7 @@ set -e
 MYSQL_PASSWORD=$(cat /run/secrets/db_password)
 WP_ADMIN_PASSWORD=$(cat /run/secrets/wp_admin_password)
 
-cd /var/www/html
+cd /home/asoumare/data
 
 until mysqladmin ping -h mariadb -u"${MYSQL_USER}" -p"${MYSQL_PASSWORD}" --silent; do
     echo "Waiting for database..."
@@ -22,7 +22,7 @@ fi
 
 if ! wp core is-installed --allow-root 2>/dev/null; then
     wp core install \
-        --url="${WP_URL}" \
+        --url="${DOMAIN_NAME}" \
         --title="${WP_TITLE}" \
         --admin_user="${WP_ADMIN_USER}" \
         --admin_password="${WP_ADMIN_PASSWORD}" \
@@ -37,7 +37,7 @@ if ! wp core is-installed --allow-root 2>/dev/null; then
         --allow-root
 fi
 
-chown -R www-data:www-data /var/www/html
+chown -R www-data:www-data /home/asoumare/data
 
 exec "$@"
 
