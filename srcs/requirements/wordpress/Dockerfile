@@ -38,7 +38,7 @@ RUN wget --no-check-certificate https://raw.githubusercontent.com/wp-cli/builds/
 COPY tools/wordpress.sh /wordpress.sh
 RUN chmod +x /wordpress.sh
 
-EXPOSE 9000
+EXPOSE 8000
 
 ENTRYPOINT ["/wordpress.sh"]
 CMD ["php-fpm7.4", "-F"]

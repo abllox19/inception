@@ -32,7 +32,7 @@ services:
     build: requirements/nginx
     restart: always
     ports:
-      - "443:447"
+      - "443:443"
     volumes:
       - wp:/home/asoumare/data
     depends_on:
@@ -61,8 +61,8 @@ networks:
 
 secrets:
   db_root_password:
-    file: ./secrets/db_root_password.txt
+    file: ../secrets/db_root_password.txt
   db_password:
-    file: ./secrets/db_password.txt
+    file: ../secrets/db_password.txt
   wp_admin_password:
-    file: ./secrets/wp_admin_password.txt
+    file: ../secrets/wp_admin_password.txt
