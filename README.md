@@ -60,7 +60,7 @@ All configurations, scripts, and architectural decisions were implemented manual
 ### How to run the project
 
 Clone the repository:
-git clone https://github.com/Job243/Inception.git
+git clone https://github.com/abllox19/inception.git
 cd Inception
 ```bash
 make       # Build and start the containers
